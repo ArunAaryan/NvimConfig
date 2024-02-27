@@ -56,4 +56,7 @@ vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
 
 opt.scrolloff = 10
 
+vim.opt.timeoutlen = 1000
+vim.opt.ttimeoutlen = 0
+
 vim.api.nvim_set_keymap("n", "<M-j>", "<Nop>", { noremap = true, silent = true })

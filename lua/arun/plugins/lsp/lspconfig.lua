@@ -25,6 +25,7 @@ return {
     local keymap = vim.keymap -- for conciseness
 
     local opts = { noremap = true, silent = true }
+    local util = require("lspconfig/util")
     local on_attach = function(client, bufnr)
       opts.buffer = bufnr
 
@@ -155,6 +156,13 @@ return {
           },
         },
       },
+    })
+    lspconfig["gopls"].setup({
+      capabilities = capabilities,
+      on_attach = on_attach,
+      cmd = { "gopls" },
+      filetypes = { "go", "gomod", "gowork", "gotempl" },
+      rootdir = util.root_pattern("go.work", "go.mod", ".git", ".goenv"),
     })
   end,
 }
