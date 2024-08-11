@@ -2,7 +2,7 @@ return {
   "williamboman/mason.nvim",
   dependencies = {
     "williamboman/mason-lspconfig.nvim",
-   "WhoIsSethDaniel/mason-tool-installer.nvim",
+    "WhoIsSethDaniel/mason-tool-installer.nvim",
   },
   config = function()
     -- import mason
@@ -38,6 +38,7 @@ return {
         "prismals",
         "pyright",
         "gopls",
+        -- "rust-analyzer",
       },
       -- auto-install configured servers (with lspconfig)
       automatic_installation = true, -- not the same as ensure_installed
@@ -51,6 +52,8 @@ return {
         "black", -- python formatter
         "pylint", -- python linter
         "eslint_d", -- js linter
+        "rustfmt", -- rust formatter
+        -- "rust-analyzer", -- rust language server
       },
     })
   end,

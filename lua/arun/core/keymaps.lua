@@ -31,3 +31,4 @@ keymap.set("n", "<leader>tn", "<cmd>tabn<CR>", { desc = "Go to next tab" }) --  
 keymap.set("n", "<leader>tp", "<cmd>tabp<CR>", { desc = "Go to previous tab" }) --  go to previous tab
 keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Open current buffer in new tab" }) --  move current buffer to new tab
 keymap.set("n", "<leader>tlo", "<cmd>e#<CR>", { desc = "Reopen last tab" }) --  move current buffer to new tab
+keymap.set("n", ";", ":", { desc = "CMD enter command mode" })

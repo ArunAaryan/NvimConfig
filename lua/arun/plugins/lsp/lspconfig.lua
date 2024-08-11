@@ -157,12 +157,26 @@ return {
         },
       },
     })
+
     lspconfig["gopls"].setup({
       capabilities = capabilities,
       on_attach = on_attach,
       cmd = { "gopls" },
-      filetypes = { "go", "gomod", "gowork", "gotempl" },
+      filetypes = { "go", "gomod", "gowork", "gotempl", "templ" },
       rootdir = util.root_pattern("go.work", "go.mod", ".git", ".goenv"),
+    })
+
+    lspconfig["rust_analyzer"].setup({
+      capabilities = capabilities,
+      on_attach = on_attach,
+      filetypes = { "rust" },
+      settings = {
+        ['rust-analyzer'] = {
+          cargo = {
+            allFeatures = true,
+          }
+        }
+      }
     })
   end,
 }

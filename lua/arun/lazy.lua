@@ -13,7 +13,7 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({ { import = "arun.plugins" }, { import = "arun.plugins.lsp" } }, {
   install = {
-    colorscheme = { "nightfly" },
+    -- colorscheme = { "nightfly" },
   },
   checker = {
     enabled = true,

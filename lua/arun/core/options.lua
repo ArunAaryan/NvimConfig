@@ -21,6 +21,7 @@ opt.smartcase = true -- if you include mixed case in your search, assumes you wa
 opt.cursorline = true -- highlight the current cursor line
 
 -- appearance
+-- opt.guifont = "FiraCode Nerd Font:h12" -- set the font
 
 -- turn on termguicolors for nightfly colorscheme to work
 -- (have to use iterm2 or any other true color terminal)
@@ -41,11 +42,8 @@ opt.splitbelow = true -- split horizontal window to the bottom
 -- turn off swapfile
 opt.swapfile = false
 
--- vim.o.guifont = "ApercuMono-Regular:h12"
-vim.o.guifont = "Menlo-Regular:h12"
-
 vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
-  group = vim.api.nvim_create_augroup("float_diagnostic_cursor", { clear = true }),
+  group = vim.api.nvim_create_augroup("float_diagnostic_cursor", { clear = true}),
   callback = function()
     vim.diagnostic.open_float(nil, { focus = false, scope = "cursor" })
   end,
@@ -60,3 +58,4 @@ vim.opt.timeoutlen = 1000
 vim.opt.ttimeoutlen = 0
 
 vim.api.nvim_set_keymap("n", "<M-j>", "<Nop>", { noremap = true, silent = true })
+vim.opt.fillchars = { eob = ' ' }
